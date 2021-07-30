@@ -53,7 +53,7 @@ def create_generator(args, preprocess_image):
 
         validation_generator = CocoGenerator(
             args.coco_path,
-            'val2017',
+            args.validation_set,
             shuffle_groups=False,
             **common_args
         )
@@ -87,6 +87,7 @@ def parse_args(args):
 
     coco_parser = subparsers.add_parser('coco')
     coco_parser.add_argument('coco_path', help='Path to dataset directory (ie. /tmp/COCO).')
+    coco_parser.add_argument('--validation_set', help='Name dataset json (ie. if default.json write --set_name default).', default='val2017')
 
     pascal_parser = subparsers.add_parser('pascal')
     pascal_parser.add_argument('pascal_path', help='Path to dataset directory (ie. /tmp/VOCdevkit).')
