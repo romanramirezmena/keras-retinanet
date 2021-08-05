@@ -396,8 +396,8 @@ def parse_args(args):
 
     coco_parser = subparsers.add_parser('coco')
     coco_parser.add_argument('coco_path', help='Path to dataset directory (ie. /tmp/COCO).')
-    coco_parser.add_argument('--validation_set', help='Name dataset json to train (ie. if default.json write --set_name default).', default='val2017')
-    coco_parser.add_argument('--train_set', help='Name dataset json to validate (ie. if default.json write --set_name default).', default='val2017')
+    coco_parser.add_argument('--val-set', help='Name dataset json to train (ie. if default.json write --set_name default).', default='val2017')
+    coco_parser.add_argument('--train-set', help='Name dataset json to validate (ie. if default.json write --set_name default).', default='train2017')
 
     pascal_parser = subparsers.add_parser('pascal')
     pascal_parser.add_argument('pascal_path', help='Path to dataset directory (ie. /tmp/VOCdevkit).')
